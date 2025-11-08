@@ -335,6 +335,14 @@ const serverlessHandler = serverlessHttp(app, {
   },
 });
 
+// Type for serverless-http response
+interface ServerlessResponse {
+  statusCode: number;
+  headers: Record<string, string | string[] | undefined>;
+  body: string;
+  isBase64Encoded?: boolean;
+}
+
 // Export Vercel serverless function
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   // Convert Vercel request to AWS Lambda-style event (which serverless-http expects)
@@ -351,7 +359,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   // Call serverless handler
   try {
-    const result = await serverlessHandler(event, context);
+    const result = await serverlessHandler(event, context) as ServerlessResponse;
     
     // Set status code
     res.statusCode = result.statusCode || 200;
@@ -359,7 +367,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Set headers
     if (result.headers) {
       Object.entries(result.headers).forEach(([key, value]) => {
-        res.setHeader(key, value as string);
+        if (value !== undefined) {
+          res.setHeader(key, value as string | string[]);
+        }
       });
     }
     
