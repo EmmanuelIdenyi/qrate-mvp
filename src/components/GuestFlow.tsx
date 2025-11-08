@@ -115,7 +115,8 @@ export function GuestFlow({ event, onPreferencesSubmitted, onBack }: GuestFlowPr
             setOauthError(
               'Spotify reported an invalid authorization code.\n\n' +
               'Most likely cause: Redirect URI mismatch.\n' +
-              '- Ensure you are using https://127.0.0.1:3000/guest in your Spotify app settings.\n' +
+              '- Ensure you are using the correct redirect URI in your Spotify app settings.\n' +
+              '- For production: https://qrate-mvp.vercel.app/guest\n' +
               '- Make sure SPOTIFY_GUEST_REDIRECT_URI is set to the same URI.\n' +
               '- Retry the connection.'
             );

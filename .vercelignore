@@ -6,7 +6,6 @@ database/*.db-shm
 database/*.db-wal
 server/local-server.js
 scripts/
-build/
 .env.local
 *.pem
 

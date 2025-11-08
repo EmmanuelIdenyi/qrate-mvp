@@ -300,7 +300,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
 
       const scopes = 'user-read-private playlist-read-private playlist-read-collaborative user-follow-read';
-      const redirectUri = config.spotify.guestRedirectUri || `${req.headers.origin || 'https://localhost:3000'}/guest`;
+      const redirectUri = config.spotify.guestRedirectUri || `${req.headers.origin || 'https://qrate-mvp.vercel.app'}/guest`;
       const state = Math.random().toString(36).substring(7);
 
       const authUrl = `https://accounts.spotify.com/authorize?` +
@@ -323,7 +323,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return sendError(res, 500, 'Spotify integration not configured', null, 'Set Spotify credentials in config.ts');
       }
 
-      const redirectUri = config.spotify.guestRedirectUri || `${req.headers.origin || 'https://localhost:3000'}/guest`;
+      const redirectUri = config.spotify.guestRedirectUri || `${req.headers.origin || 'https://qrate-mvp.vercel.app'}/guest`;
 
       const tokenResponse = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
@@ -713,7 +713,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       }
 
       const scopes = 'user-read-private playlist-modify-public playlist-modify-private';
-      const redirectUri = config.spotify.djRedirectUri || `${req.headers.origin || 'https://localhost:3000'}/dj/spotify/callback`;
+      const redirectUri = config.spotify.djRedirectUri || `${req.headers.origin || 'https://qrate-mvp.vercel.app'}/dj/spotify/callback`;
       const state = Math.random().toString(36).substring(7);
 
       const authUrl = `https://accounts.spotify.com/authorize?` +
@@ -736,7 +736,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         return sendError(res, 500, 'Spotify integration not configured', null, 'Set Spotify credentials in config.ts');
       }
 
-      const redirectUri = config.spotify.djRedirectUri || `${req.headers.origin || 'https://localhost:3000'}/dj/spotify/callback`;
+      const redirectUri = config.spotify.djRedirectUri || `${req.headers.origin || 'https://qrate-mvp.vercel.app'}/dj/spotify/callback`;
 
       const tokenResponse = await fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',

@@ -11,8 +11,8 @@ export const config = {
   spotify: {
     clientId: process.env.SPOTIFY_CLIENT_ID || 'YOUR_SPOTIFY_CLIENT_ID_HERE',
     clientSecret: process.env.SPOTIFY_CLIENT_SECRET || 'YOUR_SPOTIFY_CLIENT_SECRET_HERE',
-    guestRedirectUri: process.env.SPOTIFY_GUEST_REDIRECT_URI || 'https://your-app.vercel.app/guest',
-    djRedirectUri: process.env.SPOTIFY_DJ_REDIRECT_URI || 'https://your-app.vercel.app/dj/spotify/callback',
+    guestRedirectUri: process.env.SPOTIFY_GUEST_REDIRECT_URI || 'https://qrate-mvp.vercel.app/guest',
+    djRedirectUri: process.env.SPOTIFY_DJ_REDIRECT_URI || 'https://qrate-mvp.vercel.app/dj/spotify/callback',
   },
 };
 

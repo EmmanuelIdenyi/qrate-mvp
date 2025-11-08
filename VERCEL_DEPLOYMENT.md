@@ -28,8 +28,8 @@ This project is configured for deployment on Vercel. Follow these steps to deplo
 2. Create a new app or use an existing one
 3. Get your Client ID and Client Secret
 4. Add redirect URIs:
-   - `https://your-vercel-app.vercel.app/guest`
-   - `https://your-vercel-app.vercel.app/dj/spotify/callback`
+   - `https://qrate-mvp.vercel.app/guest`
+   - `https://qrate-mvp.vercel.app/dj/spotify/callback`
 
 ### 3. Deploy to Vercel
 
@@ -81,8 +81,8 @@ You have two options for configuring credentials:
      spotify: {
        clientId: 'your-actual-client-id',
        clientSecret: 'your-actual-client-secret',
-       guestRedirectUri: 'https://your-app.vercel.app/guest',
-       djRedirectUri: 'https://your-app.vercel.app/dj/spotify/callback',
+       guestRedirectUri: 'https://qrate-mvp.vercel.app/guest',
+       djRedirectUri: 'https://qrate-mvp.vercel.app/dj/spotify/callback',
      },
    };
    ```
@@ -101,8 +101,8 @@ SUPABASE_URL=https://xxxxx.supabase.co
 SUPABASE_ANON_KEY=your-anon-key-here
 SPOTIFY_CLIENT_ID=your-spotify-client-id
 SPOTIFY_CLIENT_SECRET=your-spotify-client-secret
-SPOTIFY_GUEST_REDIRECT_URI=https://your-app.vercel.app/guest
-SPOTIFY_DJ_REDIRECT_URI=https://your-app.vercel.app/dj/spotify/callback
+SPOTIFY_GUEST_REDIRECT_URI=https://qrate-mvp.vercel.app/guest
+SPOTIFY_DJ_REDIRECT_URI=https://qrate-mvp.vercel.app/dj/spotify/callback
 ```
 
 The config file will automatically use environment variables if they're set, otherwise it falls back to the hardcoded values.
@@ -112,8 +112,8 @@ The config file will automatically use environment variables if they're set, oth
 ### 5. Verify Deployment
 
 1. Visit your deployed app URL
-2. Check the health endpoint: `https://your-app.vercel.app/api/health`
-3. Check database health: `https://your-app.vercel.app/api/health/db`
+2. Check the health endpoint: `https://qrate-mvp.vercel.app/api/health`
+3. Check database health: `https://qrate-mvp.vercel.app/api/health/db`
 
 ## How It Works
 
